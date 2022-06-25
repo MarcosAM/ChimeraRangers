@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Propeller : MonoBehaviour
+public class Propeller : HoldShipPart
 {
     Rigidbody2D rb2d;
 
@@ -13,7 +13,7 @@ public class Propeller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (HandleInput())
         {
             if (rb2d != null)
             {

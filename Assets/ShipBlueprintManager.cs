@@ -19,7 +19,7 @@ public class ShipBlueprintManager : MonoBehaviour
     };
 
     static ShipBlueprintManager instance;
-    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Cannon };
+    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Cannon, ShipParts.Turbine };
 
     void Awake()
     {

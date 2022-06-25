@@ -32,4 +32,9 @@ public class ShipBlueprintUIManager : MonoBehaviour
     {
         OnDropdownChange(dropdown, 1);
     }
+
+    public void OnThirdDropdownChange(Dropdown dropdown)
+    {
+        OnDropdownChange(dropdown, 2);
+    }
 }
