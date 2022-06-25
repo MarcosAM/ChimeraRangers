@@ -19,7 +19,7 @@ public class ShipBlueprintManager : MonoBehaviour
     };
 
     static ShipBlueprintManager instance;
-    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Nothing, ShipParts.Nothing };
+    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Cannon };
 
     void Awake()
     {
@@ -40,6 +40,13 @@ public class ShipBlueprintManager : MonoBehaviour
 
     public static ShipParts GetShipPart(int idx)
     {
-        return instance.parts[idx];
+        if (instance != null)
+        {
+            if (idx >= 0 && idx < instance.parts.Count)
+            {
+                return instance.parts[idx];
+            }
+        }
+        return ShipParts.Nothing;
     }
 }
