@@ -16,7 +16,9 @@ public class Ship : MonoBehaviour
     [SerializeField]
     Propeller propellerPrefab;
 
-    void Start()
+    List<ShipPart> parts = new List<ShipPart>();
+
+    void Awake()
     {
         for (int idx = 0; idx < partsPositions.Count; idx++)
         {
@@ -27,6 +29,7 @@ public class Ship : MonoBehaviour
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
                     cannon.SetInputType((ShipPart.InputType)idx);
+                    parts.Add(cannon);
                 }
 
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Turbine)
@@ -34,8 +37,15 @@ public class Ship : MonoBehaviour
                     Propeller propeller = Instantiate(propellerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     propeller.transform.localPosition = partsPositions[idx];
                     propeller.SetInputType((ShipPart.InputType)idx);
+                    parts.Add(propeller);
                 }
+            }
+            else
+            {
+                parts.Add(null);
             }
         }
     }
+
+    public List<ShipPart> GetParts() { return parts; }
 }

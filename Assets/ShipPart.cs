@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class ShipPart : MonoBehaviour
 {
@@ -24,23 +25,25 @@ public abstract class ShipPart : MonoBehaviour
     protected float maxTemp = 1;
     protected bool overheated = false;
 
-    protected float Temperature
+    public Action<float> OnTemperatureChange;
+
+    public float Temperature
     {
         set
         {
+            float newValue = value;
             if (value >= maxTemp)
             {
-                temperature = maxTemp;
+                newValue = maxTemp;
                 overheated = true;
-                return;
             }
             if (value <= minTemp)
             {
-                temperature = minTemp;
+                newValue = minTemp;
                 if (overheated) overheated = false;
-                return;
             }
-            temperature = value;
+            temperature = newValue;
+            if (OnTemperatureChange != null) OnTemperatureChange(temperature);
         }
         get
         {
