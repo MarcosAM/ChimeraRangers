@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 10
-  pushIntensity: 60
+  pushIntensity: 5
 --- !u!50 &5332222624492535193
 Rigidbody2D:
   serializedVersion: 4

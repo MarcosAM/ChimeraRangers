@@ -62,6 +62,7 @@ public class Breakable : MonoBehaviour
         float pushOutcome = dmg.pushIntensity - pushResistence;
         if (dmg.pushIntensity - pushResistence > 0)
         {
+            rb2d.velocity = Vector2.zero;
             rb2d.AddForce(dmg.pushDirection * pushOutcome);
         }
     }
