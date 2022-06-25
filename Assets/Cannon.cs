@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class Cannon : ClickShipPart
 {
     [SerializeField]
     Projectile projectilePrefab;
@@ -28,7 +28,7 @@ public class Cannon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (HandleInput())
         {
             Shoot();
             Recoil();

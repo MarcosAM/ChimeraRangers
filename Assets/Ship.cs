@@ -23,6 +23,7 @@ public class Ship : MonoBehaviour
                 {
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
+                    cannon.SetInputType((ShipPart.InputType)idx);
                 }
             }
         }
