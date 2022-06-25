@@ -77,6 +77,11 @@ public abstract class ShipPart : MonoBehaviour
     protected float maxHp = 100;
     public Action<float> OnHpPercentageChange;
 
+    void Break()
+    {
+        Destroy(gameObject);
+    }
+
     float Hp
     {
         set
@@ -89,6 +94,7 @@ public abstract class ShipPart : MonoBehaviour
             if (value <= minHp)
             {
                 newValue = minHp;
+                Break();
             }
             hp = newValue;
             if (OnHpPercentageChange != null) OnHpPercentageChange(hp / maxHp);
@@ -100,4 +106,14 @@ public abstract class ShipPart : MonoBehaviour
     }
 
     public float GetHpPercentage() { return hp / maxHp; }
+
+    public struct Damage
+    {
+        public float value;
+    }
+
+    public void AttackIt(Damage dmg)
+    {
+        Hp -= dmg.value;
+    }
 }

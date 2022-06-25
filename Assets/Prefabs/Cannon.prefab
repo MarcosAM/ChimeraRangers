@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4056834866563880687}
   - component: {fileID: 4056834866563880686}
   - component: {fileID: 4056834866563880685}
-  m_Layer: 0
+  - component: {fileID: 4849485104641836609}
+  m_Layer: 3
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,4 +98,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cdRate: 0.5
   overheatedCdRate: 0.1
+  hp: 100
+  maxHp: 100
   projectilePrefab: {fileID: 6846916366872708465, guid: a7c513fc1a6c92b488c59a02bc8b8dd3, type: 3}
+--- !u!58 &4849485104641836609
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4056834866563880680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
