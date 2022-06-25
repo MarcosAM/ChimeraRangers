@@ -69,4 +69,35 @@ public abstract class ShipPart : MonoBehaviour
             Temperature -= cdRate * Time.deltaTime;
         }
     }
+
+    protected float minHp = 0;
+    [SerializeField]
+    protected float hp = 100;
+    [SerializeField]
+    protected float maxHp = 100;
+    public Action<float> OnHpPercentageChange;
+
+    float Hp
+    {
+        set
+        {
+            float newValue = value;
+            if (value >= maxHp)
+            {
+                newValue = maxHp;
+            }
+            if (value <= minHp)
+            {
+                newValue = minHp;
+            }
+            hp = newValue;
+            if (OnHpPercentageChange != null) OnHpPercentageChange(hp / maxHp);
+        }
+        get
+        {
+            return hp;
+        }
+    }
+
+    public float GetHpPercentage() { return hp / maxHp; }
 }
