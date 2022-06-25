@@ -11,6 +11,28 @@ public class Projectile : MonoBehaviour
     float duration = 2f;
     float currDuration = 0f;
 
+    int hp = 1;
+
+    [SerializeField]
+    Untouchable untouchable;
+
+    void WearOut()
+    {
+        hp -= 1;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        if (untouchable)
+        {
+            untouchable.OnAttackedIt += WearOut;
+        }
+    }
+
     public void Fire(Vector2 direction)
     {
         fired = true;

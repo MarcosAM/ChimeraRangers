@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 4889311601610987699}
+  untouchable: {fileID: 993364261549618264}
 --- !u!50 &4889311601610987699
 Rigidbody2D:
   serializedVersion: 4
