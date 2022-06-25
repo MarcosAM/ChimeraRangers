@@ -228,6 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314440372}
   - component: {fileID: 314440373}
+  - component: {fileID: 314440374}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -300,6 +301,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &314440374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314440371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba93c6754a2b386449fac8e16ee544bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6846916366872708465, guid: a7c513fc1a6c92b488c59a02bc8b8dd3, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
