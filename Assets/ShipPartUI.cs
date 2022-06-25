@@ -14,11 +14,14 @@ public class ShipPartUI : MonoBehaviour
 
     public void SetShipPart(ShipPart shipPart)
     {
-        OnTemperatureChange(shipPart.Temperature);
-        shipPart.OnTemperatureChange += OnTemperatureChange;
+        if (shipPart != null)
+        {
+            OnTemperatureChange(shipPart.Temperature);
+            shipPart.OnTemperatureChange += OnTemperatureChange;
 
-        OnHpPercentageChange(shipPart.GetHpPercentage());
-        shipPart.OnHpPercentageChange += OnHpPercentageChange;
+            OnHpPercentageChange(shipPart.GetHpPercentage());
+            shipPart.OnHpPercentageChange += OnHpPercentageChange;
+        }
     }
 
     void OnTemperatureChange(float temperature)

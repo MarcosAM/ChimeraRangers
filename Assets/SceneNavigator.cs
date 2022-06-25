@@ -9,4 +9,14 @@ public class SceneNavigator : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+    public void GoToCreate()
+    {
+        SceneManager.LoadScene("Create");
+    }
+
+    public void GoToScore()
+    {
+        SceneManager.LoadScene("Score");
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Ship : MonoBehaviour
 {
@@ -18,12 +19,14 @@ public class Ship : MonoBehaviour
 
     List<ShipPart> parts = new List<ShipPart>();
 
+    public Action OnCompletelyBreak;
+
     void CheckIfCompletelyBreak()
     {
         bool notCompletelyBroken = parts.Exists(p => p != null);
         if (!notCompletelyBroken)
         {
-            Debug.Log("Quebrou!");
+            if (OnCompletelyBreak != null) OnCompletelyBreak();
         }
     }
 
