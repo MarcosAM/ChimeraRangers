@@ -8,6 +8,9 @@ public class Ship : MonoBehaviour
     List<Vector2> partsPositions;
 
     [SerializeField]
+    List<Transform> partsHandlers;
+
+    [SerializeField]
     Cannon cannonPrefab;
 
     void Start()
@@ -18,7 +21,7 @@ public class Ship : MonoBehaviour
             {
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Cannon)
                 {
-                    Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, transform);
+                    Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
                 }
             }
