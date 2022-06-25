@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: {fileID: 1730830414}
   sceneNavigator: {fileID: 315125923}
+  timeManager: {fileID: 817561988}
 --- !u!4 &1202157070
 Transform:
   m_ObjectHideFlags: 0

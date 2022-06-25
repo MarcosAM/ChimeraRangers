@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
         StartCoroutine("Timer");
     }
 
-    void Stop()
+    public void Stop()
     {
         running = false;
         StopAllCoroutines();

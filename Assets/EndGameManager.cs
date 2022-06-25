@@ -9,9 +9,13 @@ public class EndGameManager : MonoBehaviour
 
     [SerializeField]
     SceneNavigator sceneNavigator;
+    [SerializeField]
+    TimeManager timeManager;
 
     void OnPlayersShipCompletelyBreak()
     {
+        timeManager.Stop();
+        ScoreManager.SetTime(timeManager.GetTime());
         sceneNavigator.GoToScore();
     }
 
