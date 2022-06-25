@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Propeller : HoldShipPart
 {
-    Rigidbody2D rb2d;
-
     void Awake()
     {
         rb2d = GetComponentInParent<Rigidbody2D>();

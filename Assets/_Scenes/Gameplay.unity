@@ -755,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 10
+  pushIntensity: 120
 --- !u!212 &1746206485
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -832,6 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c084befade19a04c89455d3b5287de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: 1746206483}
   hp: 30
   maxHp: 30
 --- !u!1001 &1824760359

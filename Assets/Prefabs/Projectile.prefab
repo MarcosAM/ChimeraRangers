@@ -150,3 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 10
+  pushIntensity: 10
+  rb2d: {fileID: 4889311601610987699}

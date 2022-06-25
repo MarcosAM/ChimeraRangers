@@ -5,6 +5,8 @@ using System;
 
 public class Breakable : MonoBehaviour
 {
+    [SerializeField]
+    protected Rigidbody2D rb2d;
     protected float minHp = 0;
     [SerializeField]
     protected float hp = 100;
@@ -45,10 +47,19 @@ public class Breakable : MonoBehaviour
     public struct Damage
     {
         public float value;
+        public float pushIntensity;
+        public Vector2 pushDirection;
     }
+
+    float pushResistence = 0f;
 
     public void AttackIt(Damage dmg)
     {
         Hp -= dmg.value;
+        float pushOutcome = dmg.pushIntensity - pushResistence;
+        if (dmg.pushIntensity - pushResistence > 0)
+        {
+            rb2d.AddForce(dmg.pushDirection * pushOutcome);
+        }
     }
 }

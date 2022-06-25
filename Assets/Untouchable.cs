@@ -7,6 +7,8 @@ public class Untouchable : MonoBehaviour
 {
     [SerializeField]
     float dmg;
+    [SerializeField]
+    float pushIntensity;
 
     public Action OnAttackedIt;
 
@@ -15,7 +17,7 @@ public class Untouchable : MonoBehaviour
         Breakable breakable = col.gameObject.GetComponent<Breakable>();
         if (breakable != null)
         {
-            breakable.AttackIt(new Breakable.Damage() { value = dmg });
+            breakable.AttackIt(new Breakable.Damage() { value = dmg, pushIntensity = this.pushIntensity, pushDirection = col.transform.position - transform.position });
             if (OnAttackedIt != null) OnAttackedIt();
         }
     }
@@ -25,7 +27,7 @@ public class Untouchable : MonoBehaviour
         Breakable breakable = col.gameObject.GetComponent<Breakable>();
         if (breakable != null)
         {
-            breakable.AttackIt(new Breakable.Damage() { value = dmg });
+            breakable.AttackIt(new Breakable.Damage() { value = dmg, pushIntensity = this.pushIntensity, pushDirection = col.transform.position - transform.position });
             if (OnAttackedIt != null) OnAttackedIt();
         }
     }

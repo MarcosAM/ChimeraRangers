@@ -6,7 +6,6 @@ public class Cannon : ClickShipPart
 {
     [SerializeField]
     Projectile projectilePrefab;
-    Rigidbody2D rb2d;
 
     void Awake()
     {
