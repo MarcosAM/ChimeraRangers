@@ -6,8 +6,8 @@ public class MOSpawner : MonoBehaviour
 {
     [SerializeField]
     Transform[] spawnPoints;
-    float spawnRateBase = 0.4f;
-    float spawnRateVariation = 0.6f;
+    float spawnRateBase = 0.8f;
+    float spawnRateVariation = 1.2f;
 
     [SerializeField]
     Projectile projectilePrefab;

@@ -20,7 +20,7 @@ public class Cannon : ClickShipPart
 
     void Recoil()
     {
-        float recoil = 10f;
+        float recoil = 5f;
         Vector2 oppositeDir = (transform.position - transform.parent.position).normalized * -1;
         rb2d.AddForce(oppositeDir * recoil);
     }

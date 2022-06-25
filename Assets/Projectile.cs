@@ -7,10 +7,13 @@ public class Projectile : MonoBehaviour
     bool fired = false;
     [SerializeField]
     Rigidbody2D rb2d;
+    [SerializeField]
     float velocity = 300f;
+    [SerializeField]
     float duration = 2f;
     float currDuration = 0f;
 
+    [SerializeField]
     int hp = 1;
 
     [SerializeField]
