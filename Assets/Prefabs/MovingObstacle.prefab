@@ -180,3 +180,4 @@ MonoBehaviour:
   rb2d: {fileID: 6971579385417870201}
   hp: 30
   maxHp: 30
+  pushResistence: 10

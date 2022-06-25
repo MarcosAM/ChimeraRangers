@@ -54,6 +54,7 @@ public class Breakable : MonoBehaviour
         public Vector2 pushDirection;
     }
 
+    [SerializeField]
     float pushResistence = 0f;
 
     public void AttackIt(Damage dmg)
