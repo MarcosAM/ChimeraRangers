@@ -19,11 +19,19 @@ public class Cannon : MonoBehaviour
         projectile.Fire((transform.position - transform.parent.position).normalized);
     }
 
+    void Recoil()
+    {
+        float recoil = 30f;
+        Vector2 oppositeDir = (transform.position - transform.parent.position).normalized * -1;
+        rb2d.AddForce(oppositeDir * recoil);
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            Recoil();
         }
     }
 }

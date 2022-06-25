@@ -13,7 +13,6 @@ public class Projectile : MonoBehaviour
 
     public void Fire(Vector2 direction)
     {
-        Debug.Log("Direction " + direction);
         fired = true;
         rb2d.AddForce(direction * velocity);
     }
