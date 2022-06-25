@@ -14,8 +14,11 @@ public class Breakable : MonoBehaviour
     protected float maxHp = 100;
     public Action<float> OnHpPercentageChange;
 
+    public Action<Breakable> OnBreak;
+
     void Break()
     {
+        if (OnBreak != null) OnBreak(this);
         Destroy(gameObject);
     }
 

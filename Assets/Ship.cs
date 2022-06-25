@@ -18,6 +18,25 @@ public class Ship : MonoBehaviour
 
     List<ShipPart> parts = new List<ShipPart>();
 
+    void CheckIfCompletelyBreak()
+    {
+        bool notCompletelyBroken = parts.Exists(p => p != null);
+        if (!notCompletelyBroken)
+        {
+            Debug.Log("Quebrou!");
+        }
+    }
+
+    void OnShipPartBreak(Breakable shipPart)
+    {
+        int idx = parts.IndexOf((ShipPart)shipPart);
+        if (idx > 0)
+        {
+            parts[idx] = null;
+            CheckIfCompletelyBreak();
+        }
+    }
+
     void Awake()
     {
         for (int idx = 0; idx < partsPositions.Count; idx++)
@@ -29,6 +48,7 @@ public class Ship : MonoBehaviour
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
                     cannon.SetInputType((ShipPart.InputType)idx);
+                    cannon.OnBreak += OnShipPartBreak;
                     parts.Add(cannon);
                 }
 
@@ -37,6 +57,7 @@ public class Ship : MonoBehaviour
                     Propeller propeller = Instantiate(propellerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     propeller.transform.localPosition = partsPositions[idx];
                     propeller.SetInputType((ShipPart.InputType)idx);
+                    propeller.OnBreak += OnShipPartBreak;
                     parts.Add(propeller);
                 }
             }
