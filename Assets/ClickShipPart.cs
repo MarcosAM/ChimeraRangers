@@ -6,6 +6,7 @@ public class ClickShipPart : ShipPart
 {
     protected override bool HandleInput()
     {
+        if (overheated) return false;
         switch (this.inputType)
         {
             case (ShipPart.InputType.First):

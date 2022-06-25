@@ -21,7 +21,7 @@ public class Cannon : ClickShipPart
 
     void Recoil()
     {
-        float recoil = 20f;
+        float recoil = 10f;
         Vector2 oppositeDir = (transform.position - transform.parent.position).normalized * -1;
         rb2d.AddForce(oppositeDir * recoil);
     }
@@ -32,6 +32,11 @@ public class Cannon : ClickShipPart
         {
             Shoot();
             Recoil();
+            Temperature += 0.2f;
+        }
+        else
+        {
+            Cooldown();
         }
     }
 }

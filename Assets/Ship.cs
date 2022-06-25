@@ -22,7 +22,6 @@ public class Ship : MonoBehaviour
         {
             if (ShipBlueprintManager.GetShipPart(idx) != ShipBlueprintManager.ShipParts.Nothing)
             {
-                Debug.Log(ShipBlueprintManager.GetShipPart(idx));
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Cannon)
                 {
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);

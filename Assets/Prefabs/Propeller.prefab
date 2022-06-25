@@ -95,3 +95,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f1b82eec7cc3c4cbfc1219842553bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cdRate: 0.5
+  overheatedCdRate: 0.1

@@ -13,11 +13,16 @@ public class Propeller : HoldShipPart
 
     void Update()
     {
-        if (HandleInput())
+        if (rb2d != null)
         {
-            if (rb2d != null)
+            if (HandleInput())
             {
-                rb2d.AddForce((transform.parent.position - transform.position).normalized * 30f * Time.deltaTime);
+                rb2d.AddForce((transform.parent.position - transform.position).normalized * 80f * Time.deltaTime);
+                Temperature += 0.2f * Time.deltaTime;
+            }
+            else
+            {
+                Cooldown();
             }
         }
     }

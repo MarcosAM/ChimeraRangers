@@ -95,4 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba93c6754a2b386449fac8e16ee544bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cdRate: 0.5
+  overheatedCdRate: 0.1
   projectilePrefab: {fileID: 6846916366872708465, guid: a7c513fc1a6c92b488c59a02bc8b8dd3, type: 3}
