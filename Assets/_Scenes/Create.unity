@@ -709,7 +709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Canh\xE3o"
+  m_Text: Cannon
 --- !u!222 &313670477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -812,12 +812,14 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Turbine
       m_Image: {fileID: 0}
+    - m_Text: Nothing
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 603619518}
         m_TargetAssemblyTypeName: ShipBlueprintUIManager, Assembly-CSharp
-        m_MethodName: OnDropdownChange
+        m_MethodName: OnFirstDropdownChange
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 327273931}
@@ -1100,6 +1102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e52c991696038c4580fa4243db2643c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partsDropdowns:
+  - {fileID: 327273931}
+  - {fileID: 1084778930}
 --- !u!4 &603619519
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,13 +1921,27 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "Canh\xE3o"
+    - m_Text: Cannon
       m_Image: {fileID: 0}
-    - m_Text: Turbina
+    - m_Text: Turbine
+      m_Image: {fileID: 0}
+    - m_Text: Nothing
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603619518}
+        m_TargetAssemblyTypeName: ShipBlueprintUIManager, Assembly-CSharp
+        m_MethodName: OnSecondDropdownChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1084778930}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Dropdown, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1084778931
 MonoBehaviour:

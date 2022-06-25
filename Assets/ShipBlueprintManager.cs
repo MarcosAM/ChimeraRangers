@@ -38,8 +38,8 @@ public class ShipBlueprintManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public static ShipParts GetShipPart(int idx)
     {
-        Debug.Log(parts[0]);
+        return instance.parts[idx];
     }
 }
