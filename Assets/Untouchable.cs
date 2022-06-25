@@ -12,7 +12,7 @@ public class Untouchable : MonoBehaviour
         ShipPart shipPart = col.gameObject.GetComponent<ShipPart>();
         if (shipPart != null)
         {
-            shipPart.AttackIt(new ShipPart.Damage() { value = dmg });
+            shipPart.AttackIt(new Breakable.Damage() { value = dmg });
         }
     }
 }
