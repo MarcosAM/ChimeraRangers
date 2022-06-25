@@ -21,7 +21,7 @@ public class Cannon : MonoBehaviour
 
     void Recoil()
     {
-        float recoil = 30f;
+        float recoil = 20f;
         Vector2 oppositeDir = (transform.position - transform.parent.position).normalized * -1;
         rb2d.AddForce(oppositeDir * recoil);
     }

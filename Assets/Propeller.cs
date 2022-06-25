@@ -17,7 +17,7 @@ public class Propeller : MonoBehaviour
         {
             if (rb2d != null)
             {
-                rb2d.AddForce((transform.parent.position - transform.position).normalized * 0.1f);
+                rb2d.AddForce((transform.parent.position - transform.position).normalized * 30f * Time.deltaTime);
             }
         }
     }
