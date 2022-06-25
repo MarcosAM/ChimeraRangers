@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 1730830413}
   - component: {fileID: 1730830412}
   - component: {fileID: 1730830414}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayersShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,8 +687,9 @@ GameObject:
   - component: {fileID: 1746206484}
   - component: {fileID: 1746206483}
   - component: {fileID: 1746206482}
-  m_Layer: 0
-  m_Name: Square
+  - component: {fileID: 1746206487}
+  m_Layer: 6
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,6 +820,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746206487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746206481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c084befade19a04c89455d3b5287de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
+  maxHp: 30
 --- !u!1001 &1824760359
 PrefabInstance:
   m_ObjectHideFlags: 0

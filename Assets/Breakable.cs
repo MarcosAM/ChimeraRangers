@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public abstract class Breakable : MonoBehaviour
+public class Breakable : MonoBehaviour
 {
     protected float minHp = 0;
     [SerializeField]
