@@ -33,7 +33,7 @@ public class Ship : MonoBehaviour
     void OnShipPartBreak(Breakable shipPart)
     {
         int idx = parts.IndexOf((ShipPart)shipPart);
-        if (idx > 0)
+        if (idx >= 0)
         {
             parts[idx] = null;
             CheckIfCompletelyBreak();

@@ -55,7 +55,7 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-        name = GetNameFromParts(parts);
+        shipsName = GetNameFromParts(parts);
     }
 
     static string GetNameFromPart(ShipParts part)
@@ -79,8 +79,8 @@ public class ShipBlueprintManager : MonoBehaviour
             if (idx >= 0 && idx < instance.parts.Count)
             {
                 instance.parts[idx] = part;
-                instance.name = GetNameFromParts(instance.parts);
-                if (instance.OnNameChanged != null) instance.OnNameChanged(instance.name);
+                instance.shipsName = GetNameFromParts(instance.parts);
+                if (instance.OnNameChanged != null) instance.OnNameChanged(instance.shipsName);
             }
         }
     }
