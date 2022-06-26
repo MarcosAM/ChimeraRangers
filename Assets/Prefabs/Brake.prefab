@@ -131,3 +131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1411dcfef81121443b8541c6cc39d334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sp: {fileID: 4056834866563880686}
+  breakable: {fileID: -729658451879201219}

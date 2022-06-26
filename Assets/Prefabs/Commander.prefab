@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4056834866563880686}
   - component: {fileID: 4849485104641836609}
   - component: {fileID: 7088949036153070749}
+  - component: {fileID: 4783609382977231969}
   m_Layer: 3
   m_Name: Commander
   m_TagString: Untagged
@@ -119,3 +120,17 @@ MonoBehaviour:
   cdRate: 0.4
   overheatedCdRate: 0.1
   heat: 0.3
+--- !u!114 &4783609382977231969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4056834866563880680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1411dcfef81121443b8541c6cc39d334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp: {fileID: 4056834866563880686}
+  breakable: {fileID: 7088949036153070749}
