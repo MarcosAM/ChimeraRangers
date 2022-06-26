@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2198206551315732276}
   - component: {fileID: 306110541822302156}
   - component: {fileID: 6768550504888915998}
+  - component: {fileID: 7783694759201817584}
   m_Layer: 6
   m_Name: MovingObstacle
   m_TagString: Untagged
@@ -171,3 +172,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.38
+--- !u!114 &7783694759201817584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971579385417870206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1411dcfef81121443b8541c6cc39d334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp: {fileID: 6971579385417870203}
+  breakable: {fileID: 306110541822302156}

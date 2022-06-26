@@ -13,6 +13,7 @@ public class Breakable : MonoBehaviour
     [SerializeField]
     protected float maxHp = 100;
     public Action<float> OnHpPercentageChange;
+    public Action OnDmgTaken;
 
     public Action<Breakable> OnBreak;
 
@@ -38,6 +39,7 @@ public class Breakable : MonoBehaviour
             }
             hp = newValue;
             if (OnHpPercentageChange != null) OnHpPercentageChange(hp / maxHp);
+            if (OnDmgTaken != null && newValue > minHp) OnDmgTaken();
         }
         get
         {
