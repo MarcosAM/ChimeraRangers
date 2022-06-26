@@ -10,11 +10,11 @@ public class ClickShipPart : ShipPart
         switch (this.inputType)
         {
             case (ShipPart.InputType.First):
-                return Input.GetMouseButtonDown(0);
+                return InputHandler.GetFirstClick();
             case (ShipPart.InputType.Second):
-                return Input.GetKeyDown("z");
+                return InputHandler.GetSecondClick();
             case (ShipPart.InputType.Third):
-                return Input.GetMouseButtonDown(1);
+                return InputHandler.GetThirdClick();
             default:
                 return false;
         }

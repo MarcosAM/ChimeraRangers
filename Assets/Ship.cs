@@ -26,6 +26,9 @@ public class Ship : MonoBehaviour
     [SerializeField]
     TriCannon triCannonPrefab;
 
+    [SerializeField]
+    Commander commanderPrefab;
+
     float stabilization;
 
     List<ShipPart> parts = new List<ShipPart>();
@@ -56,6 +59,17 @@ public class Ship : MonoBehaviour
             parts[idx] = null;
             UpdateStabilization();
             CheckIfCompletelyBreak();
+        }
+    }
+
+    void SetCommanders()
+    {
+        foreach(ShipPart sp in parts)
+        {
+            if(sp is Commander)
+            {
+                ((Commander)sp).UpdateInputTypes(parts);
+            }
         }
     }
 
@@ -94,6 +108,15 @@ public class Ship : MonoBehaviour
                     parts.Add(brake);
                 }
 
+                if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Commander)
+                {
+                    Commander commander = Instantiate(commanderPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
+                    commander.transform.localPosition = partsPositions[idx];
+                    commander.SetInputType((ShipPart.InputType)idx);
+                    commander.OnBreak += OnShipPartBreak;
+                    parts.Add(commander);
+                }
+
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Turbine)
                 {
                     Propeller propeller = Instantiate(propellerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
@@ -118,6 +141,7 @@ public class Ship : MonoBehaviour
             }
         }
         UpdateStabilization();
+        SetCommanders();
     }
 
     public List<ShipPart> GetParts() { return parts; }

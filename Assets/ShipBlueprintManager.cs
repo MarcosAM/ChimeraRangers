@@ -10,6 +10,7 @@ public class ShipBlueprintManager : MonoBehaviour
         Turbine,
         Cannon,
         TripleCannon,
+        Commander,
         Brake,
         Stabilizer,
         Nothing
@@ -20,6 +21,7 @@ public class ShipBlueprintManager : MonoBehaviour
         {"Turbine", ShipParts.Turbine},
         {"Cannon", ShipParts.Cannon},
         {"TripleCannon", ShipParts.TripleCannon},
+        {"Commander", ShipParts.Commander},
         {"Brake", ShipParts.Brake},
         {"Stabilizer", ShipParts.Stabilizer},
         {"Nothing", ShipParts.Nothing}
@@ -30,6 +32,7 @@ public class ShipBlueprintManager : MonoBehaviour
         {ShipParts.Turbine, new string[]{"β", "γ", "δ", "ζ", "λ", "Σ", "ψ","Ω", "2000", "LV-426", "42"}},
         {ShipParts.Cannon, new string[]{"Red", "Blue", "Yellow", "Knight","Fighter","Alien","Ranger", "Maverick", "Ice", "Goose", "Man"}},
         {ShipParts.TripleCannon, new string[]{"Mad", "MadDog", "Shotgun", "Hydra","Twins","Tripple","Danger", "Hunter", "Tri-Headed"}},
+        {ShipParts.Commander, new string[]{"Commander", "Lord", "King", "Queen", "Zeus", "Odin"}},
         {ShipParts.Brake, new string[]{"Static", "Elder", "Ground", "Patriot", "Stand"}},
         {ShipParts.Stabilizer, new string[]{"Focus", "Zen", "Lotus", "White", "Rock", "Stoic"}},
         {ShipParts.Nothing, new string[]{"Big Ballz", "God", "Casual Killer", "Alfa & Omega", "Norris"}}
@@ -37,11 +40,12 @@ public class ShipBlueprintManager : MonoBehaviour
 
     public static Dictionary<ShipParts, string> partsDescriptions = new Dictionary<ShipParts, string>()
     {
-        {ShipParts.Turbine, "Push the ship in the direction of the mouse."},
-        {ShipParts.Cannon, "Fires a projectile in the direction of the mouse."},
-        {ShipParts.TripleCannon, "Fires three short-range projectiles in the direction of the mouse."},
-        {ShipParts.Brake, "Immediately and completely stops the ship."},
-        {ShipParts.Stabilizer, "Reduce weapon recoil."},
+        {ShipParts.Turbine, "Push the ship in the direction of the mouse. (Active)"},
+        {ShipParts.Cannon, "Fires a projectile in the direction of the mouse. (Active)"},
+        {ShipParts.TripleCannon, "Fires three short-range projectiles in the direction of the mouse. (Active)"},
+        {ShipParts.Commander, "Fire with all weapons at the same time. (Active)"},
+        {ShipParts.Brake, "Immediately and completely stops the ship. (Active)"},
+        {ShipParts.Stabilizer, "Reduce weapon recoil. (Passive)"},
         {ShipParts.Nothing, "Nothing, because you don't need help."}
     };
 

@@ -10,11 +10,11 @@ public class HoldShipPart : ShipPart
         switch (this.inputType)
         {
             case (ShipPart.InputType.First):
-                return Input.GetMouseButton(0);
+                return InputHandler.GetFirstHold();
             case (ShipPart.InputType.Second):
-                return Input.GetKey("z");
+                return InputHandler.GetSecondHold();
             case (ShipPart.InputType.Third):
-                return Input.GetMouseButton(1);
+                return InputHandler.GetThirdHold();
             default:
                 return false;
         }
