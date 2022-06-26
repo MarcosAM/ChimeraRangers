@@ -7,7 +7,7 @@ using System;
 public class ShipPartUI : MonoBehaviour
 {
     [SerializeField]
-    Text tempTxt;
+    Slider tempSlider;
 
     [SerializeField]
     Text hpTxt;
@@ -26,11 +26,11 @@ public class ShipPartUI : MonoBehaviour
 
     void OnTemperatureChange(float temperature)
     {
-        tempTxt.text = String.Format("T: {0:P2}", temperature);
+        tempSlider.value = temperature;
     }
 
     void OnHpPercentageChange(float hpPercentage)
     {
-        hpTxt.text = String.Format("H: {0:P2}", hpPercentage);
+        hpTxt.text = String.Format("{0:P0}", hpPercentage);
     }
 }
