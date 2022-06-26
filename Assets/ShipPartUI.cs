@@ -33,6 +33,18 @@ public class ShipPartUI : MonoBehaviour
         status.text = "Broken";
     }
 
+    void OnCooldown()
+    {
+        blackout.gameObject.SetActive(false);
+        status.text = string.Empty;
+    }
+
+    void OnOverheat()
+    {
+        blackout.gameObject.SetActive(true);
+        status.text = "Overheat";
+    }
+
     public void SetShipPart(ShipPart shipPart)
     {
         if (shipPart != null)
@@ -44,6 +56,8 @@ public class ShipPartUI : MonoBehaviour
             shipPart.OnHpPercentageChange += OnHpPercentageChange;
 
             shipPart.OnBreak += OnBreak;
+            shipPart.OnCooldown += OnCooldown;
+            shipPart.OnOverheat += OnOverheat;
         }
     }
 

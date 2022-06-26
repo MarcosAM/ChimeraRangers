@@ -28,6 +28,9 @@ public abstract class ShipPart : Breakable
 
     public Action<float> OnTemperatureChange;
 
+    public Action OnOverheat;
+    public Action OnCooldown;
+
     public float Temperature
     {
         set
@@ -36,12 +39,20 @@ public abstract class ShipPart : Breakable
             if (value >= maxTemp)
             {
                 newValue = maxTemp;
-                overheated = true;
+                if (!overheated)
+                {
+                    overheated = true;
+                    if (OnOverheat != null) OnOverheat();
+                }
             }
             if (value <= minTemp)
             {
                 newValue = minTemp;
-                if (overheated) overheated = false;
+                if (overheated)
+                {
+                    overheated = false;
+                    if (OnCooldown != null) OnCooldown();
+                }
             }
             temperature = newValue;
             if (OnTemperatureChange != null) OnTemperatureChange(temperature);
