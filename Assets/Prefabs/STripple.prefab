@@ -371,9 +371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 6971579385417870201}
-  velocity: 0.75
+  velocity: 7.5
   duration: 24
-  hp: 1
+  hp: 20
   untouchable: {fileID: 2198206551315732276}
 --- !u!114 &2198206551315732276
 MonoBehaviour:
@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dc6dedfea876d44ad6440a6d71dbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
-  pushIntensity: 20
+  dmg: 15
+  pushIntensity: 0
 --- !u!114 &306110541822302156
 MonoBehaviour:
   m_ObjectHideFlags: 0

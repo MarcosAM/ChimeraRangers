@@ -20,6 +20,12 @@ public class MOSpawner : MonoBehaviour
     
     [SerializeField]
     Projectile sBouncePrefab;
+
+    [SerializeField]
+    Projectile bTripplePrefab;
+    
+    [SerializeField]
+    Projectile sTripplePrefab;
     
     [SerializeField]
     Transform playersShip;
@@ -27,29 +33,43 @@ public class MOSpawner : MonoBehaviour
     void Shoot(Vector3 origin)
     {
         float chance = Random.value;
-        if(chance > 0.75f)
+        if(chance > 0.85f)
         {
-            Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
-            projectile.Fire((playersShip.position - origin).normalized);
+            Projectile sTripple = Instantiate(sTripplePrefab, origin, Quaternion.identity);
+            sTripple.Fire((playersShip.position - origin).normalized);
             return;
         }
 
-        if(chance > 0.5f)
+        if(chance > 0.70f)
         {
             Projectile biggerBrown = Instantiate(biggerBrownPrefab, origin, Quaternion.identity);
             biggerBrown.Fire((playersShip.position - origin).normalized);
             return;
         }
 
-        if(chance > 0.25f)
+        if(chance > 0.55f)
         {
             Projectile bBounce = Instantiate(bBouncePrefab, origin, Quaternion.identity);
             bBounce.Fire((playersShip.position - origin).normalized);
             return;
         }
 
-        Projectile sBounce = Instantiate(sBouncePrefab, origin, Quaternion.identity);
-        sBounce.Fire((playersShip.position - origin).normalized);
+        if(chance > 0.40f)
+        {
+            Projectile sBounce = Instantiate(sBouncePrefab, origin, Quaternion.identity);
+            sBounce.Fire((playersShip.position - origin).normalized);
+            return;   
+        }
+
+        if(chance > 0.25f)
+        {
+            Projectile bTripple = Instantiate(bTripplePrefab, origin, Quaternion.identity);
+            bTripple.Fire((playersShip.position - origin).normalized);
+            return;   
+        }
+
+        Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
+        projectile.Fire((playersShip.position - origin).normalized);
         return;
     }
 

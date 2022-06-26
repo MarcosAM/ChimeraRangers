@@ -818,6 +818,8 @@ MonoBehaviour:
   biggerBrownPrefab: {fileID: 4895922272148723246, guid: 7560457d23372a4458c8ce5244096a6e, type: 3}
   bBouncePrefab: {fileID: 4895922272148723246, guid: 6dba88b881af0b946a22808ef2e0be96, type: 3}
   sBouncePrefab: {fileID: 4895922272148723246, guid: 46c405020b43cc14ab0dd55f379237c7, type: 3}
+  bTripplePrefab: {fileID: 4895922272148723246, guid: 3dd54785b804d5d45b00b6259d549f40, type: 3}
+  sTripplePrefab: {fileID: 4895922272148723246, guid: 02ce6f7500a37c2448d828dc419bdb6a, type: 3}
   playersShip: {fileID: 1730830410}
 --- !u!4 &449946212
 Transform:
