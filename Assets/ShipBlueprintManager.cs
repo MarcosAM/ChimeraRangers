@@ -26,6 +26,13 @@ public class ShipBlueprintManager : MonoBehaviour
         {ShipParts.Nothing, new string[]{"Big Ballz", "God", "Casual Killer", "Alfa & Omega", "Norris"}}
     };
 
+    public static Dictionary<ShipParts, string> partsDescriptions = new Dictionary<ShipParts, string>()
+    {
+        {ShipParts.Turbine, "Push the ship in the direction of the mouse."},
+        {ShipParts.Cannon, "Fires a projectile in the direction of the mouse."},
+        {ShipParts.Nothing, "Nothing, because you don't need help."}
+    };
+
     static ShipBlueprintManager instance;
     List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Cannon, ShipParts.Turbine };
 
@@ -49,6 +56,20 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         if (instance == null) return;
         instance.OnNameChanged -= callback;
+    }
+
+    public Action<string, string> OnDescriptionChanged;
+
+    public static void ListenToOnDescriptionChange(Action<string, string> callback)
+    {
+        if (instance == null) return;
+        instance.OnDescriptionChanged += callback;
+    }
+
+    public static void CancelListenToOnDescriptionChange(Action<string, string> callback)
+    {
+        if (instance == null) return;
+        instance.OnDescriptionChanged -= callback;
     }
 
     void Awake()
@@ -81,6 +102,7 @@ public class ShipBlueprintManager : MonoBehaviour
                 instance.parts[idx] = part;
                 instance.shipsName = GetNameFromParts(instance.parts);
                 if (instance.OnNameChanged != null) instance.OnNameChanged(instance.shipsName);
+                if (instance.OnDescriptionChanged != null) instance.OnDescriptionChanged(part.ToString(), partsDescriptions[part]);
             }
         }
     }
