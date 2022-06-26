@@ -15,6 +15,8 @@ public class HoldShipPart : ShipPart
                 return InputHandler.GetSecondHold();
             case (ShipPart.InputType.Third):
                 return InputHandler.GetThirdHold();
+            case (ShipPart.InputType.Forth):
+                return InputHandler.GetForthHold();
             default:
                 return false;
         }

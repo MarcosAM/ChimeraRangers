@@ -50,7 +50,7 @@ public class ShipBlueprintManager : MonoBehaviour
     };
 
     static ShipBlueprintManager instance;
-    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Cannon, ShipParts.Turbine };
+    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Commander, ShipParts.Cannon, ShipParts.Cannon, ShipParts.Turbine };
 
     public Action<string> OnNameChanged;
 
@@ -109,8 +109,8 @@ public class ShipBlueprintManager : MonoBehaviour
     static string GetNameFromParts(List<ShipParts> parts)
     {
         string[] names = parts.ConvertAll<string>(part => GetNameFromPart(part)).ToArray();
-        if (names.Length == 3)
-            return string.Format("{0} {1} {2}", names[0], names[1], names[2]);
+        if (names.Length == 4)
+            return string.Format("{0} {1} {2} {3}", names[0], names[1], names[2], names[3]);
         return string.Empty;
     }
 

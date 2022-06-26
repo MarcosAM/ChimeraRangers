@@ -9,7 +9,8 @@ public abstract class ShipPart : Breakable
     {
         First,
         Second,
-        Third
+        Third,
+        Forth
     }
 
     protected InputType inputType;

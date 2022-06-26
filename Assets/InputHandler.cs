@@ -21,12 +21,14 @@ public class InputHandler : MonoBehaviour
     bool forceFirst = false;
     bool forceSecond = false;
     bool forceThird = false;
+    bool forceForth = false;
 
     public void ClearForces()
     {
         forceFirst = false;
         forceSecond = false;
         forceThird = false;
+        forceForth = false;
     }
 
     public static void ForceFirst()
@@ -47,6 +49,12 @@ public class InputHandler : MonoBehaviour
         instance.forceThird = true;
     }
 
+    public static void ForceForth()
+    {
+        if(instance == null) return;
+        instance.forceForth = true;
+    }
+
     public static bool GetFirstClick()
     {
         if(instance == null) return false;
@@ -58,7 +66,7 @@ public class InputHandler : MonoBehaviour
     public static bool GetSecondClick()
     {
         if(instance == null) return false;
-        bool output = instance.forceSecond || Input.GetKeyDown("z");
+        bool output = instance.forceSecond || Input.GetKeyDown("a");
         if(instance.forceSecond) instance.forceSecond = false;
         return output;
     }
@@ -66,8 +74,16 @@ public class InputHandler : MonoBehaviour
     public static bool GetThirdClick()
     {
         if(instance == null) return false;
-        bool output = instance.forceThird || Input.GetMouseButtonDown(1);
+        bool output = instance.forceThird || Input.GetKeyDown("s");
         if(instance.forceThird) instance.forceThird = false;
+        return output;
+    }
+
+    public static bool GetForthClick()
+    {
+        if(instance == null) return false;
+        bool output = instance.forceForth || Input.GetMouseButtonDown(1);
+        if(instance.forceForth) instance.forceForth = false;
         return output;
     }
 
@@ -80,13 +96,18 @@ public class InputHandler : MonoBehaviour
     public static bool GetSecondHold()
     {
         if(instance == null) return false;
-        return Input.GetKey("z");
+        return Input.GetKey("a");
     }
 
     public static bool GetThirdHold()
     {
         if(instance == null) return false;
-        return Input.GetMouseButton(1);
+        return Input.GetKey("s");
     }
 
+    public static bool GetForthHold()
+    {
+        if(instance == null) return false;
+        return Input.GetMouseButton(1);
+    }
 }

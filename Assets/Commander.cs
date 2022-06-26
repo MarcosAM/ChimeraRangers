@@ -40,6 +40,9 @@ public class Commander : ClickShipPart
             case(InputType.Third):
                 InputHandler.ForceThird();
                 break;
+            case(InputType.Forth):
+                InputHandler.ForceForth();
+                break;
             default:
                 break;
         }

@@ -15,6 +15,8 @@ public class ClickShipPart : ShipPart
                 return InputHandler.GetSecondClick();
             case (ShipPart.InputType.Third):
                 return InputHandler.GetThirdClick();
+            case (ShipPart.InputType.Forth):
+                return InputHandler.GetForthClick();      
             default:
                 return false;
         }
