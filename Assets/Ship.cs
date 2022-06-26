@@ -23,6 +23,9 @@ public class Ship : MonoBehaviour
     [SerializeField]
     Stabilizer stabilizerPrefab;
 
+    [SerializeField]
+    TriCannon triCannonPrefab;
+
     float stabilization;
 
     List<ShipPart> parts = new List<ShipPart>();
@@ -70,6 +73,16 @@ public class Ship : MonoBehaviour
                     cannon.SetShip(this);
                     cannon.OnBreak += OnShipPartBreak;
                     parts.Add(cannon);
+                }
+
+                if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.TripleCannon)
+                {
+                    Cannon triCannon = Instantiate(triCannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
+                    triCannon.transform.localPosition = partsPositions[idx];
+                    triCannon.SetInputType((ShipPart.InputType)idx);
+                    triCannon.SetShip(this);
+                    triCannon.OnBreak += OnShipPartBreak;
+                    parts.Add(triCannon);
                 }
 
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Brake)

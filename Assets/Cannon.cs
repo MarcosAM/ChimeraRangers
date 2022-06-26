@@ -7,16 +7,25 @@ public class Cannon : ClickShipPart
     [SerializeField]
     Projectile projectilePrefab;
     Ship ship;
+    [SerializeField]
+    float baseRecoil = 5f;
+    [SerializeField]
+    float heat = 0.2f;
 
     void Awake()
     {
         rb2d = GetComponentInParent<Rigidbody2D>();
     }
 
-    void Shoot()
+    protected void ShootFrom(Vector3 origin)
     {
-        Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.Fire((transform.position - transform.parent.position).normalized);
+        Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
+        projectile.Fire((origin - transform.parent.position).normalized);        
+    }
+
+    protected virtual void Shoot()
+    {
+        ShootFrom(transform.position);
     }
 
     float GetStabilization()
@@ -30,7 +39,7 @@ public class Cannon : ClickShipPart
 
     float GetRecoil()
     {
-        float appliedRecoil = 5f - GetStabilization();
+        float appliedRecoil = baseRecoil - GetStabilization();
         if(appliedRecoil <= 0) return 0;
         return appliedRecoil;
     }
@@ -49,7 +58,7 @@ public class Cannon : ClickShipPart
         {
             Shoot();
             Recoil();
-            Temperature += 0.2f;
+            Temperature += heat;
         }
         else
         {

@@ -665,6 +665,8 @@ MonoBehaviour:
     m_Options:
     - m_Text: Cannon
       m_Image: {fileID: 0}
+    - m_Text: TripleCannon
+      m_Image: {fileID: 0}
     - m_Text: Turbine
       m_Image: {fileID: 0}
     - m_Text: Brake
