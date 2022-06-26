@@ -91,7 +91,7 @@ public class Ship : MonoBehaviour
 
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.TripleCannon)
                 {
-                    Cannon triCannon = Instantiate(triCannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
+                    TriCannon triCannon = Instantiate(triCannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     triCannon.transform.localPosition = partsPositions[idx];
                     triCannon.SetInputType((ShipPart.InputType)idx);
                     triCannon.SetShip(this);
@@ -121,6 +121,7 @@ public class Ship : MonoBehaviour
                 {
                     Propeller propeller = Instantiate(propellerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     propeller.transform.localPosition = partsPositions[idx];
+                    propeller.transform.localEulerAngles = Vector3.zero;
                     propeller.SetInputType((ShipPart.InputType)idx);
                     propeller.OnBreak += OnShipPartBreak;
                     parts.Add(propeller);
