@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dc6dedfea876d44ad6440a6d71dbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
-  pushIntensity: 5
+  dmg: 5
+  pushIntensity: 10
 --- !u!50 &5332222624492535193
 Rigidbody2D:
   serializedVersion: 4
