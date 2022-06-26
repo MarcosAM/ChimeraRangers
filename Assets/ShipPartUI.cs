@@ -31,6 +31,6 @@ public class ShipPartUI : MonoBehaviour
 
     void OnHpPercentageChange(float hpPercentage)
     {
-        hpTxt.text = String.Format("T: {0:P2}", hpPercentage);
+        hpTxt.text = String.Format("H: {0:P2}", hpPercentage);
     }
 }
