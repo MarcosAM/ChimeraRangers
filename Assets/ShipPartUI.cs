@@ -21,6 +21,18 @@ public class ShipPartUI : MonoBehaviour
     [SerializeField]
     Color lowHp;
 
+    [SerializeField]
+    Image blackout;
+
+    [SerializeField]
+    Text status;
+
+    void OnBreak(Breakable breakable)
+    {
+        blackout.gameObject.SetActive(true);
+        status.text = "Broken";
+    }
+
     public void SetShipPart(ShipPart shipPart)
     {
         if (shipPart != null)
@@ -30,6 +42,8 @@ public class ShipPartUI : MonoBehaviour
 
             OnHpPercentageChange(shipPart.GetHpPercentage());
             shipPart.OnHpPercentageChange += OnHpPercentageChange;
+
+            shipPart.OnBreak += OnBreak;
         }
     }
 
