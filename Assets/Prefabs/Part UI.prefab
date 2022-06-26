@@ -402,6 +402,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempSlider: {fileID: 5272984468983785597}
   hp: {fileID: 8668008004177700466}
+  highHp: {r: 0, g: 1, b: 0, a: 1}
+  mediumHp: {r: 1, g: 1, b: 0, a: 1}
+  lowHp: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &6757295362413394821
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,15 @@ public class ShipPartUI : MonoBehaviour
     [SerializeField]
     Image hp;
 
+    [SerializeField]
+    Color highHp;
+
+    [SerializeField]
+    Color mediumHp;
+
+    [SerializeField]
+    Color lowHp;
+
     public void SetShipPart(ShipPart shipPart)
     {
         if (shipPart != null)
@@ -29,8 +38,16 @@ public class ShipPartUI : MonoBehaviour
         tempSlider.value = temperature;
     }
 
+    Color GetHpColor(float hpPercentage)
+    {
+        if(hpPercentage >= 0.75f) return highHp;
+        if(hpPercentage > 0.25f) return mediumHp;
+        return lowHp;
+    }
+
     void OnHpPercentageChange(float hpPercentage)
     {
+        hp.color = GetHpColor(hpPercentage);
         hp.fillAmount = hpPercentage;
     }
 }
