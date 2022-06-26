@@ -10,7 +10,7 @@ public class ShipPartUI : MonoBehaviour
     Slider tempSlider;
 
     [SerializeField]
-    Text hpTxt;
+    Image hp;
 
     public void SetShipPart(ShipPart shipPart)
     {
@@ -31,6 +31,6 @@ public class ShipPartUI : MonoBehaviour
 
     void OnHpPercentageChange(float hpPercentage)
     {
-        hpTxt.text = String.Format("{0:P0}", hpPercentage);
+        hp.fillAmount = hpPercentage;
     }
 }

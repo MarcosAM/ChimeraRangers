@@ -1893,6 +1893,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Part UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6757295362413394822, guid: fcd944f3e5cb79148b067e0981de328a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185885669882220247, guid: fcd944f3e5cb79148b067e0981de328a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcd944f3e5cb79148b067e0981de328a, type: 3}
 --- !u!1001 &5332222624090636938
