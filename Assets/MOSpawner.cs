@@ -14,6 +14,12 @@ public class MOSpawner : MonoBehaviour
     
     [SerializeField]
     Projectile biggerBrownPrefab;
+
+    [SerializeField]
+    Projectile bBouncePrefab;
+    
+    [SerializeField]
+    Projectile sBouncePrefab;
     
     [SerializeField]
     Transform playersShip;
@@ -21,16 +27,30 @@ public class MOSpawner : MonoBehaviour
     void Shoot(Vector3 origin)
     {
         float chance = Random.value;
-        if(chance > 0.5f)
+        if(chance > 0.75f)
         {
             Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
             projectile.Fire((playersShip.position - origin).normalized);
+            return;
         }
-        else
+
+        if(chance > 0.5f)
         {
             Projectile biggerBrown = Instantiate(biggerBrownPrefab, origin, Quaternion.identity);
             biggerBrown.Fire((playersShip.position - origin).normalized);
+            return;
         }
+
+        if(chance > 0.25f)
+        {
+            Projectile bBounce = Instantiate(bBouncePrefab, origin, Quaternion.identity);
+            bBounce.Fire((playersShip.position - origin).normalized);
+            return;
+        }
+
+        Projectile sBounce = Instantiate(sBouncePrefab, origin, Quaternion.identity);
+        sBounce.Fire((playersShip.position - origin).normalized);
+        return;
     }
 
     void ShootFromRandomSpawnPoint()
