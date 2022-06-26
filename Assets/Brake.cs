@@ -16,7 +16,7 @@ public class Brake : ClickShipPart
             if (HandleInput())
             {
                 rb2d.velocity = Vector2.zero;
-                Temperature += 0.35f;
+                Temperature += 0.3f;
             }
             else
             {

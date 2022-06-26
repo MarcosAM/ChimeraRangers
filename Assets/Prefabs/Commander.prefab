@@ -114,11 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  hp: 50
-  maxHp: 50
+  hp: 20
+  maxHp: 20
   pushResistence: 0
-  cdRate: 0.4
-  overheatedCdRate: 0.1
+  cdRate: 0.5
+  overheatedCdRate: 0.25
   heat: 0.3
 --- !u!114 &4783609382977231969
 MonoBehaviour:

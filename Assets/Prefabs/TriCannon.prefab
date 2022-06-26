@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  hp: 100
-  maxHp: 100
+  hp: 20
+  maxHp: 20
   pushResistence: 0
-  cdRate: 0.25
-  overheatedCdRate: 0.07
+  cdRate: 0.3
+  overheatedCdRate: 0.15
   projectilePrefab: {fileID: 6846916366872708465, guid: 171bf6f28a0dfe747b732b8ac44926e3, type: 3}
   baseRecoil: 20
   heat: 0.4

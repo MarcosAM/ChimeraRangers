@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  hp: 100
-  maxHp: 100
+  hp: 30
+  maxHp: 30
   pushResistence: 0
   cdRate: 0.5
   overheatedCdRate: 0.1
