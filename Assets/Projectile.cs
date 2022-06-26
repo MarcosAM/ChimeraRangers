@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         hp -= 1;
         if (hp <= 0)
         {
+            ExplosionManager.SmallExplosion(transform.position);
             Destroy(gameObject);
         }
     }
