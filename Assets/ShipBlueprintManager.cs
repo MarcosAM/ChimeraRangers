@@ -50,7 +50,7 @@ public class ShipBlueprintManager : MonoBehaviour
     };
 
     static ShipBlueprintManager instance;
-    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Commander, ShipParts.Cannon, ShipParts.Cannon, ShipParts.Turbine };
+    List<ShipParts> parts = new List<ShipParts>() { ShipParts.Cannon, ShipParts.Nothing, ShipParts.Nothing, ShipParts.Turbine };
 
     public Action<string> OnNameChanged;
 

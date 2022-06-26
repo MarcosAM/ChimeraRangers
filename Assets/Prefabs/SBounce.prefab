@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 6971579385417870201}
   velocity: 45
-  duration: 8
+  duration: 6
   hp: 1
   untouchable: {fileID: 2198206551315732276}
 --- !u!114 &2198206551315732276

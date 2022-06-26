@@ -27,13 +27,13 @@ public class ExplosionManager : MonoBehaviour
     void SE(Vector3 position)
     {
         ParticleSystem ps = Instantiate(smallExplosionPrefab, position, Quaternion.identity);
-        Destroy(ps, 0.7f);        
+        Destroy(ps.gameObject, 0.7f);        
     }
 
     void BE(Vector3 position)
     {
         ParticleSystem ps = Instantiate(bigExplosionPrefab, position, Quaternion.identity);
-        Destroy(ps, 0.7f);        
+        Destroy(ps.gameObject, 0.7f);        
     }
 
     public static void BigExplosion(Vector3 position)
