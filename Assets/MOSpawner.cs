@@ -7,17 +7,30 @@ public class MOSpawner : MonoBehaviour
     [SerializeField]
     Transform[] spawnPoints;
     float spawnRateBase = 0.8f;
-    float spawnRateVariation = 1.2f;
+    float spawnRateVariation = 1.5f;
 
     [SerializeField]
     Projectile projectilePrefab;
+    
+    [SerializeField]
+    Projectile biggerBrownPrefab;
+    
     [SerializeField]
     Transform playersShip;
 
     void Shoot(Vector3 origin)
     {
-        Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
-        projectile.Fire((playersShip.position - origin).normalized);
+        float chance = Random.value;
+        if(chance > 0.5f)
+        {
+            Projectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
+            projectile.Fire((playersShip.position - origin).normalized);
+        }
+        else
+        {
+            Projectile biggerBrown = Instantiate(biggerBrownPrefab, origin, Quaternion.identity);
+            biggerBrown.Fire((playersShip.position - origin).normalized);
+        }
     }
 
     void ShootFromRandomSpawnPoint()

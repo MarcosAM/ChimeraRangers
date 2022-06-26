@@ -152,5 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dc6dedfea876d44ad6440a6d71dbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 30
+  dmg: 20
   pushIntensity: 10
