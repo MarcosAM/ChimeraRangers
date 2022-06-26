@@ -11,7 +11,7 @@ public class ShipNameUI : MonoBehaviour
 
     void OnNameChanged(string name)
     {
-        text.text = name;
+        text.text = string.Format("Name: {0}", name);
     }
 
     void Start()
