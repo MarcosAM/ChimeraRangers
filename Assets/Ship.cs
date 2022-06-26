@@ -17,6 +17,9 @@ public class Ship : MonoBehaviour
     [SerializeField]
     Propeller propellerPrefab;
 
+    [SerializeField]
+    Brake brakePrefab;
+
     List<ShipPart> parts = new List<ShipPart>();
 
     public Action OnCompletelyBreak;
@@ -53,6 +56,15 @@ public class Ship : MonoBehaviour
                     cannon.SetInputType((ShipPart.InputType)idx);
                     cannon.OnBreak += OnShipPartBreak;
                     parts.Add(cannon);
+                }
+
+                if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Brake)
+                {
+                    Brake brake = Instantiate(brakePrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
+                    brake.transform.localPosition = partsPositions[idx];
+                    brake.SetInputType((ShipPart.InputType)idx);
+                    brake.OnBreak += OnShipPartBreak;
+                    parts.Add(brake);
                 }
 
                 if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Turbine)

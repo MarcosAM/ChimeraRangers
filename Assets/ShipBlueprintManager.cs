@@ -9,6 +9,7 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         Turbine,
         Cannon,
+        Brake,
         Nothing
     }
 
@@ -16,6 +17,7 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         {"Turbine", ShipParts.Turbine},
         {"Cannon", ShipParts.Cannon},
+        {"Brake", ShipParts.Brake},
         {"Nothing", ShipParts.Nothing}
     };
 
@@ -23,6 +25,7 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         {ShipParts.Turbine, new string[]{"β", "γ", "δ", "ζ", "λ", "Σ", "ψ","Ω", "2000", "LV-426", "42"}},
         {ShipParts.Cannon, new string[]{"Red", "Blue", "Yellow", "Knight","Fighter","Alien","Ranger", "Maverick", "Ice", "Goose", "Man"}},
+        {ShipParts.Brake, new string[]{"Static", "Elder", "Ground", "Patriot", "Stand"}},
         {ShipParts.Nothing, new string[]{"Big Ballz", "God", "Casual Killer", "Alfa & Omega", "Norris"}}
     };
 
@@ -30,6 +33,7 @@ public class ShipBlueprintManager : MonoBehaviour
     {
         {ShipParts.Turbine, "Push the ship in the direction of the mouse."},
         {ShipParts.Cannon, "Fires a projectile in the direction of the mouse."},
+        {ShipParts.Brake, "Immediately and completely stops the ship."},
         {ShipParts.Nothing, "Nothing, because you don't need help."}
     };
 
