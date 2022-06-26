@@ -74,6 +74,11 @@ public class ShipBlueprintManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
         DontDestroyOnLoad(this);
         shipsName = GetNameFromParts(parts);
