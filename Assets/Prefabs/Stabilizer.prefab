@@ -116,7 +116,7 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   hp: 20
   maxHp: 20
-  pushResistence: 15
+  pushResistence: 0
   cdRate: 0
   overheatedCdRate: 0
   bonus: 15
