@@ -14,7 +14,7 @@ public class TimerUI : MonoBehaviour
     void SetTimerTxt(float time)
     {
         TimeSpan ts = TimeSpan.FromSeconds(time);
-        text.text = string.Format("{0}:{1}", ts.Minutes, ts.Seconds);
+        text.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
     }
 
     void Start()

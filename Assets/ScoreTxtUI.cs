@@ -12,6 +12,6 @@ public class ScoreTxtUI : MonoBehaviour
     void Start()
     {
         TimeSpan ts = TimeSpan.FromSeconds(ScoreManager.GetTime());
-        text.text = string.Format("Your Time: {0}:{1}", ts.Minutes, ts.Seconds);
+        text.text = string.Format("Your Time: {0:00}:{1:00}", ts.Minutes, ts.Seconds);
     }
 }
