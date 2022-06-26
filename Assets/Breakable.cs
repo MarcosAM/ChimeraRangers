@@ -20,6 +20,7 @@ public class Breakable : MonoBehaviour
     void Break()
     {
         if (OnBreak != null) OnBreak(this);
+        ExplosionManager.BigExplosion(transform.position);
         Destroy(gameObject);
     }
 
