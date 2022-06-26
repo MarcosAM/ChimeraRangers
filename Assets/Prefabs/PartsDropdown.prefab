@@ -669,6 +669,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Brake
       m_Image: {fileID: 0}
+    - m_Text: Stabilizer
+      m_Image: {fileID: 0}
     - m_Text: Nothing
       m_Image: {fileID: 0}
   m_OnValueChanged:

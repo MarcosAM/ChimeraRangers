@@ -6,6 +6,7 @@ public class Cannon : ClickShipPart
 {
     [SerializeField]
     Projectile projectilePrefab;
+    Ship ship;
 
     void Awake()
     {
@@ -18,9 +19,26 @@ public class Cannon : ClickShipPart
         projectile.Fire((transform.position - transform.parent.position).normalized);
     }
 
+    float GetStabilization()
+    {
+        if(ship != null)
+        {
+            return ship.GetStabilization();
+        }
+        return 0;
+    }
+
+    float GetRecoil()
+    {
+        float appliedRecoil = 5f - GetStabilization();
+        if(appliedRecoil <= 0) return 0;
+        return appliedRecoil;
+    }
+
     void Recoil()
     {
-        float recoil = 5f;
+        float recoil = GetRecoil();
+        if(recoil <= 0) return;
         Vector2 oppositeDir = (transform.position - transform.parent.position).normalized * -1;
         rb2d.AddForce(oppositeDir * recoil);
     }
@@ -37,5 +55,10 @@ public class Cannon : ClickShipPart
         {
             Cooldown();
         }
+    }
+
+    public void SetShip(Ship ship)
+    {
+        this.ship = ship;
     }
 }

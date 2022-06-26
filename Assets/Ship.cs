@@ -20,9 +20,21 @@ public class Ship : MonoBehaviour
     [SerializeField]
     Brake brakePrefab;
 
+    [SerializeField]
+    Stabilizer stabilizerPrefab;
+
+    float stabilization;
+
     List<ShipPart> parts = new List<ShipPart>();
 
     public Action OnCompletelyBreak;
+
+    public float GetStabilization() { return stabilization; }
+
+    void UpdateStabilization()
+    {
+        stabilization = Stabilizer.GetStabilizatonBonus(parts);
+    }
 
     void CheckIfCompletelyBreak()
     {
@@ -39,6 +51,7 @@ public class Ship : MonoBehaviour
         if (idx >= 0)
         {
             parts[idx] = null;
+            UpdateStabilization();
             CheckIfCompletelyBreak();
         }
     }
@@ -54,6 +67,7 @@ public class Ship : MonoBehaviour
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
                     cannon.SetInputType((ShipPart.InputType)idx);
+                    cannon.SetShip(this);
                     cannon.OnBreak += OnShipPartBreak;
                     parts.Add(cannon);
                 }
@@ -75,12 +89,22 @@ public class Ship : MonoBehaviour
                     propeller.OnBreak += OnShipPartBreak;
                     parts.Add(propeller);
                 }
+
+                if (ShipBlueprintManager.GetShipPart(idx) == ShipBlueprintManager.ShipParts.Stabilizer)
+                {
+                    Stabilizer stabilizer = Instantiate(stabilizerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
+                    stabilizer.transform.localPosition = partsPositions[idx];
+                    stabilizer.SetInputType((ShipPart.InputType)idx);
+                    stabilizer.OnBreak += OnShipPartBreak;
+                    parts.Add(stabilizer);
+                }
             }
             else
             {
                 parts.Add(null);
             }
         }
+        UpdateStabilization();
     }
 
     public List<ShipPart> GetParts() { return parts; }

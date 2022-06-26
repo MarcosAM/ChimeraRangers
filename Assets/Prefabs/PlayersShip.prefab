@@ -172,6 +172,8 @@ MonoBehaviour:
   cannonPrefab: {fileID: 4056834866563880685, guid: 31236a9b8b6b7b243b7e07c0a0670155, type: 3}
   propellerPrefab: {fileID: 2805785176822952305, guid: a55ec220f192e5a4fad09385345dbf96, type: 3}
   brakePrefab: {fileID: -729658451879201219, guid: 8f7925d795986a640bdf1d17386c3d13, type: 3}
+  stabilizerPrefab: {fileID: 7021645979905442922, guid: 6213e23ccd9144941a6b0050221978c5, type: 3}
+  stabilization: 0
 --- !u!1 &560621804451928900
 GameObject:
   m_ObjectHideFlags: 0
