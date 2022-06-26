@@ -83,6 +83,7 @@ public class Ship : MonoBehaviour
                 {
                     Cannon cannon = Instantiate(cannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     cannon.transform.localPosition = partsPositions[idx];
+                    cannon.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     cannon.SetInputType((ShipPart.InputType)idx);
                     cannon.SetShip(this);
                     cannon.OnBreak += OnShipPartBreak;
@@ -93,6 +94,7 @@ public class Ship : MonoBehaviour
                 {
                     TriCannon triCannon = Instantiate(triCannonPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     triCannon.transform.localPosition = partsPositions[idx];
+                    triCannon.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     triCannon.SetInputType((ShipPart.InputType)idx);
                     triCannon.SetShip(this);
                     triCannon.OnBreak += OnShipPartBreak;
@@ -103,6 +105,7 @@ public class Ship : MonoBehaviour
                 {
                     Brake brake = Instantiate(brakePrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     brake.transform.localPosition = partsPositions[idx];
+                    brake.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     brake.SetInputType((ShipPart.InputType)idx);
                     brake.OnBreak += OnShipPartBreak;
                     parts.Add(brake);
@@ -112,6 +115,7 @@ public class Ship : MonoBehaviour
                 {
                     Commander commander = Instantiate(commanderPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     commander.transform.localPosition = partsPositions[idx];
+                    commander.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     commander.SetInputType((ShipPart.InputType)idx);
                     commander.OnBreak += OnShipPartBreak;
                     parts.Add(commander);
@@ -121,7 +125,7 @@ public class Ship : MonoBehaviour
                 {
                     Propeller propeller = Instantiate(propellerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     propeller.transform.localPosition = partsPositions[idx];
-                    propeller.transform.localEulerAngles = Vector3.zero;
+                    propeller.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     propeller.SetInputType((ShipPart.InputType)idx);
                     propeller.OnBreak += OnShipPartBreak;
                     parts.Add(propeller);
@@ -131,6 +135,7 @@ public class Ship : MonoBehaviour
                 {
                     Stabilizer stabilizer = Instantiate(stabilizerPrefab, transform.position, Quaternion.identity, partsHandlers[idx]);
                     stabilizer.transform.localPosition = partsPositions[idx];
+                    stabilizer.transform.localEulerAngles = idx == 3 ? new Vector3(0, 0, 180) : Vector3.zero;
                     stabilizer.SetInputType((ShipPart.InputType)idx);
                     stabilizer.OnBreak += OnShipPartBreak;
                     parts.Add(stabilizer);
